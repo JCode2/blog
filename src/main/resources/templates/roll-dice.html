@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Roll Dice</title>
+</head>
+<body>
+
+<h2>Guess what will be rolled by selecting a number below</h2>
+
+
+<a href="/roll-dice/{1}">1</a>
+<a href="/roll-dice/{2}">2</a>
+<a href="/roll-dice/{3}">3</a>
+<a href="/roll-dice/{4}">4</a>
+<a href="/roll-dice/{5}">5</a>
+<a href="/roll-dice/{6}">6</a>
+
+
+
+
+<h1>You guessed, <span th:text="${n}"></span>!</h1>
+<h1>You guessed, <span th:text="${random}"></span>!</h1>
+
+
+<!--
+random = Math.floor((Math.Random()* 5 + 1);
+
+if(userinput.equals(random){
+"You guessed correctly!";
+}
+else{
+"better luck next time";
+}
+
+-->
+
+
+
+
+</body>
+</html>

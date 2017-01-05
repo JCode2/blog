@@ -1,0 +1,30 @@
+body{
+    background-color: ghostwhite;
+    /*background-image: url("beige_paper.png");*/
+    font-family: 'DejaVu Sans Mono', monospace;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center space-around;
+    font-size: 1.2em;
+    color:whitesmoke;
+}
+
+nav a{
+    color:whitesmoke;
+}
+
+nav a:hover{
+    color:lightskyblue;
+}
+h1{
+    color:ghostwhite;
+    display: flex;
+    justify-content: center;
+}
+
+#createform{
+    padding:.5% 20% .5% 20%;
+
+}

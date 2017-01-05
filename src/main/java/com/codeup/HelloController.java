@@ -4,17 +4,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 
 /**
  * Created by joshua on 1/4/17.
  */
 @Controller
     class HelloController {
-
+// now with tymeleaf. no need for pathvaribale and @responsebody anymore
         @GetMapping("/hello/{name}")
-        @ResponseBody
-        public String hello(@PathVariable String name) {
-            return "<h1>Hello, " + name + " from Spring!</h1>";
+        public String hello(@PathVariable String name, Model model) {
+            model.addAttribute("name", name);
+            return "hello";
         }
 
 
