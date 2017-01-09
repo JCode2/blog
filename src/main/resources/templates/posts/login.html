@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials :: head" />
 <head>
     <meta charset="UTF-8"/>
     <title>Login</title>
-    <link rel="stylesheet" href="../css/maincss.css"/>
+    <link rel="stylesheet" href="../../css/maincss.css"/>
 </head>
 <body>
-<nav style="align-content: center" class="navbar navbar-inverse">
-    <a href="/posts">Home</a>
-    <a href="/posts/create">Make a Post</a>
-    <a href="/posts/login">Login</a>
-</nav>
+<nav th:replace="partials :: navbar" />
 
 <div class="container">
     <div class="row">

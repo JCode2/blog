@@ -12,14 +12,14 @@ import org.springframework.ui.Model;
 @Controller
     class HelloController {
 // now with tymeleaf. no need for pathvaribale and @responsebody anymore
-        @GetMapping("/hello/{name}")
-        public String hello(@PathVariable String name, Model model) {
-            model.addAttribute("name", name);
-            return "hello";
-        }
+    @GetMapping("/hello/{name}")
+    public String hello(@PathVariable String name, Model model) {
+        model.addAttribute("name", name);
+        return "hello";
+    }
 
 
-        @GetMapping("increment/{number}")
+    @GetMapping("increment/{number}")
         @ResponseBody
             public String increment(@PathVariable int number){
     return number + " plus 1  equals " + (number + 1) + ".";

@@ -1,18 +1,31 @@
 package com.codeup;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by joshua on 1/5/17.
  */
+@Entity
 public class Post {
 
-    public int getId() {
-        return id;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
+    private String body;
+
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -31,11 +44,7 @@ public class Post {
         this.body = body;
     }
 
-    private int id;
 
-    private String title;
-
-    private String body;
 }
 
     //private User = author;

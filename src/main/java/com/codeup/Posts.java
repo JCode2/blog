@@ -4,10 +4,11 @@ import java.util.List;
 
 public interface Posts {
 
-    Post create(Post post);
+
     List<Post> all();
 
-   // Post edit(Post post);
+    void save(Post post);
+    // Post edit(Post post);
 
 
 

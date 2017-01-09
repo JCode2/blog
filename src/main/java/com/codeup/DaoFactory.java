@@ -1,16 +1,18 @@
 package com.codeup;
 
-/**
- * Created by joshua on 1/5/17.
- */
-public class DaoFactory {
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
-        private static Posts postsDao;
+public class DaoFactory {
+    private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    private static Session session = sessionFactory.openSession();
+
+    private static Posts postDao;
 
         public static Posts getPostsDao() {
-            if (postsDao == null) {
-                postsDao = new ListPosts();
+            if (postDao == null) {
+                postDao = new HibernatePostDao(session);
             }
-            return postsDao;
+            return postDao;
         }
 }
