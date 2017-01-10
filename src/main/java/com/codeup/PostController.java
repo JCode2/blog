@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
 
 @Controller
 @RequestMapping("/posts")
@@ -29,7 +28,7 @@ public class PostController {
             return "redirect:/posts";
         }
 
-        @GetMapping("/view/{id}")
+        @GetMapping("/{id}")
         public String postView(Model model,@PathVariable int id){
             model.addAttribute("post", DaoFactory.getPostsDao().showPost(id));
             return "posts/view";
@@ -37,28 +36,32 @@ public class PostController {
 
         @GetMapping("/{id}/edit")
         public String showEdit(Model model, @PathVariable int id){
-        //TODO:use the passed id to find the record in the databas
-            Post post = DaoFactory.getPostsDao().showEdit(id);
-        // TODO: add to the modele
+            Post post = DaoFactory.getPostsDao().showPost(id);
             model.addAttribute("post", post);
             return "posts/edit";
     }
 
         @PostMapping("/{id}/edit")
         public String update(@ModelAttribute Post editedPost, @PathVariable int id) {
-        //  TODO:find the existing record in the database with the passed id
-            Post existingPost = DaoFactory.getPostsDao().showPost(id);
-        //  TODO: update the relevant fields
+            Post existingPost = DaoFactory.getPostsDao().showPost(editedPost.getId());
             String newTitle = editedPost.getTitle();
             String newBody = editedPost.getBody();
             existingPost.setTitle(newTitle);
             existingPost.setBody(newBody);
-        //TODO: update the record in the database
             DaoFactory.getPostsDao().update(existingPost);
-        return "redirect:/posts";
+        return "redirect:/posts/" + existingPost.getId();
         }
 
-
+    @PostMapping("/{id}/delete")
+    public String delete(@ModelAttribute Post editedPost, @PathVariable int id) {
+        Post existingPost = DaoFactory.getPostsDao().showPost(editedPost.getId());
+        String newTitle = editedPost.getTitle();
+        String newBody = editedPost.getBody();
+        existingPost.setTitle(newTitle);
+        existingPost.setBody(newBody);
+        DaoFactory.getPostsDao().delete(existingPost);
+        return "redirect:/posts";
+    }
         /*
          @GetMapping("/login")
         public String showLogin(Model model){

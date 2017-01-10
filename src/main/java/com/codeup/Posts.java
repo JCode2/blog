@@ -12,9 +12,9 @@ public interface Posts {
 
     Post showPost(int id);
 
-    Post showEdit(int id);
+//    Post showEdit(int id);
 
-    void update(Post existing);
+    void update(Post existingPost);
 }
 
 

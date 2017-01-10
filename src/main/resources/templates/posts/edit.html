@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head th:include="partial/awesomeHeader :: awesomeHeader">
-    <meta charset="UTF-8">
-    <title>Edit</title>
-</head>
+<head th:include="partials/awesomeHeader :: awesomeHeader">
+    <meta charset="UTF-8" />
+    <title>Edit</title></head>
 <body>
-<nav th:include="partials/awesomeNav :: awesomeNav"></nav>
+    <nav th:include="partials/awesomeNav :: awesomeNav"></nav>
 
-<h1 th:text="*{title}">Edit </h1>
+<!--<h1 th:text="*{title}">Edit </h1>-->
 
 <div id="createform" class="page-login-form box">
-    <form th:action="@{'/posts/create'}" method="POST" role="form" class="login-form" th:object="${post}">
+    <form th:action="@{'/posts/' + *{id} + '/edit'}" th:method="POST" role="form" class="login-form" th:object="${post}">
         <div class="form-group">
             <input type="text" id="title" class="form-control" th:field="*{title}" placeholder="Title" />
         </div>

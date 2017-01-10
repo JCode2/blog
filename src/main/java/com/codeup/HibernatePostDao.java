@@ -12,10 +12,6 @@ public class HibernatePostDao implements Posts {
 
     public HibernatePostDao(Session session) {this.session = session;}
 
-//    @SuppressWarnings("unchecked")
-//    private List<Post> posts;
-
-
     @Override
     public List<Post> all() {
         return session.createQuery("from Post").list();
@@ -35,17 +31,17 @@ public class HibernatePostDao implements Posts {
         return (Post) query.getSingleResult();
     }
 
-    @Override
-    public Post showEdit(int id) {
-        Query query = session.createQuery("FROM Post where id = :id");
-        query.setParameter("id", id);
-        return (Post) query.getSingleResult();
-    }
+//    @Override
+//    public Post showEdit(int id) {
+//        Query query = session.createQuery("FROM Post where id = :id");
+//        query.setParameter("id", id);
+//        return (Post) query.getSingleResult();
+//    }
 
     @Override
-    public void update(Post existing) {
+    public void update(Post existingPost) {
         Transaction tx = session.beginTransaction();
-        session.update(existing);
+        session.update(existingPost);
         tx.commit();
     }
 }
