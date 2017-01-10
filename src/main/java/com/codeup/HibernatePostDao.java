@@ -2,6 +2,7 @@ package com.codeup;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -27,4 +28,24 @@ public class HibernatePostDao implements Posts {
         tx.commit();
     }
 
+    @Override
+    public Post showPost(int id) {
+        Query query = session.createQuery("FROM Post where id = :id");
+        query.setParameter("id", id);
+        return (Post) query.getSingleResult();
+    }
+
+    @Override
+    public Post showEdit(int id) {
+        Query query = session.createQuery("FROM Post where id = :id");
+        query.setParameter("id", id);
+        return (Post) query.getSingleResult();
+    }
+
+    @Override
+    public void update(Post existing) {
+        Transaction tx = session.beginTransaction();
+        session.update(existing);
+        tx.commit();
+    }
 }

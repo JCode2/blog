@@ -10,8 +10,11 @@ public interface Posts {
     void save(Post post);
     // Post edit(Post post);
 
+    Post showPost(int id);
 
+    Post showEdit(int id);
 
+    void update(Post existing);
 }
 
 

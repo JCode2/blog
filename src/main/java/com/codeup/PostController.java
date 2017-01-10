@@ -29,31 +29,37 @@ public class PostController {
             return "redirect:/posts";
         }
 
+        @GetMapping("/view/{id}")
+        public String postView(Model model,@PathVariable int id){
+            model.addAttribute("post", DaoFactory.getPostsDao().showPost(id));
+            return "posts/view";
+        }
 
-
-        /*@GetMapping("/{id}/edit")
-        public String showEditForm(Model m){
+        @GetMapping("/{id}/edit")
+        public String showEdit(Model model, @PathVariable int id){
         //TODO:use the passed id to find the record in the databas
-            Post post = DaoFactory.getPostsDao().find(id);
-        // TODO: add to the model
-            model.addattribute("post", post);
+            Post post = DaoFactory.getPostsDao().showEdit(id);
+        // TODO: add to the modele
+            model.addAttribute("post", post);
             return "posts/edit";
     }
 
         @PostMapping("/{id}/edit")
-        public String update(@ModelAttribute Post editedPost, @PathVariable long id) {
+        public String update(@ModelAttribute Post editedPost, @PathVariable int id) {
         //  TODO:find the existing record in the database with the passed id
-            Post existPost = DaoFactory.getPostsDao().find(id);
+            Post existingPost = DaoFactory.getPostsDao().showPost(id);
         //  TODO: update the relevant fields
             String newTitle = editedPost.getTitle();
             String newBody = editedPost.getBody();
             existingPost.setTitle(newTitle);
-            exisitngPost.setBody(newBody);
+            existingPost.setBody(newBody);
         //TODO: update the record in the database
-            DaoFactory.getPostsDao().update(existPost);
+            DaoFactory.getPostsDao().update(existingPost);
         return "redirect:/posts";
         }
 
+
+        /*
          @GetMapping("/login")
         public String showLogin(Model model){
             model.addAttribute("login", new showLogin());

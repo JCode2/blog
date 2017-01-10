@@ -7,12 +7,20 @@
 <body>
 <nav th:include="partials/awesomeNav :: awesomeNav"></nav>
 
-<h1>Edit th:text="*{title}"</h1>
+<h1 th:text="*{title}">Edit </h1>
 
-<td><a th:href="@{'/posts/' + *{id}}" th:text="*{title}"></a></td>
+<div id="createform" class="page-login-form box">
+    <form th:action="@{'/posts/create'}" method="POST" role="form" class="login-form" th:object="${post}">
+        <div class="form-group">
+            <input type="text" id="title" class="form-control" th:field="*{title}" placeholder="Title" />
+        </div>
+        <div class="form-group">
+            <textarea id="description" th:field="*{body}" class="form-control" placeholder="Description"></textarea>
+        </div>
 
-<td th:text="*{body}"></td>
+        <button type="submit" class="btn btn-info">Edit</button>
+    </form>
 
-
+</div>
 </body>
 </html>

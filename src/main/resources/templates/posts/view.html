@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="partials/awesomeHeader::awesomeHeader">
+
+    <meta charset="UTF-8" />
+    <title>Post</title>
+</head>
+<body>
+
+<nav th:replace="partials/awesomeNav :: awesomeNav"></nav>
+
+    <h1>Post</h1>
+
+    <div th:each="post : ${post}" th:object="${post}">
+    <h2 th:text="*{title}"></h2>
+
+    <div th:each="post : ${post}" th:object="${post}">
+    <p th:text="*{body}"></p>
+    </div>
+
+    <button type="submit" class="btn btn-info"><a th:href="@{'/posts/edit' + *{id} + '/edit'}">Edit</a></button>
+    </div>
+
+</body>
+</html>
