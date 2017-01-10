@@ -1,7 +1,6 @@
 body{
     background-color: ghostwhite;
-    /*background-image: url("beige_paper.png");*/
-    font-family: 'DejaVu Sans Mono', monospace;
+    font-family:'DejaVu Sans Mono','monospace';
 }
 
 .navbar{
@@ -19,7 +18,7 @@ nav a:hover{
     color:lightskyblue;
 }
 h1{
-    color:ghostwhite;
+    color:Black;
     display: flex;
     justify-content: center;
 }

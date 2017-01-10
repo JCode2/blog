@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials :: head" />
+<head th:include="partials/awesomeHeader :: awesomeHeader">
 <head>
     <meta charset="UTF-8"/>
     <title>Login</title>
-    <link rel="stylesheet" href="../../css/maincss.css"/>
+    <link rel="stylesheet" href="../../static/css/maincss.css"/>
 </head>
 <body>
 <nav th:replace="partials/awesomeNav :: awesomeNav"></nav>

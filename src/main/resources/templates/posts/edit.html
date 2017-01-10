@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head th:include="partial/awesomeHeader :: awesomeHeader">
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<nav th:include="partials/awesomeNav :: awesomeNav"></nav>
+
+<h1>Edit th:text="*{title}"</h1>
+
+<td><a th:href="@{'/posts/' + *{id}}" th:text="*{title}"></a></td>
+
+<td th:text="*{body}"></td>
+
+
+</body>
+</html>
