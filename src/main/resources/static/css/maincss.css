@@ -8,15 +8,15 @@ body{
     justify-content: center space-around;
     padding-top: 2%;
     font-size: 1.2em;
-    color:whitesmoke;
+    background-color:steelblue;
 }
 
 nav a{
-    color:whitesmoke;
+    color:white;
 }
 
 nav a:hover{
-    color:lightskyblue;
+    color:goldenrod;
 }
 h1{
     color:Black;
