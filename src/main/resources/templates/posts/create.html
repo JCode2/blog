@@ -14,11 +14,12 @@
 <form th:action="@{'/posts/create'}" method="POST" role="form" class="login-form" th:object="${post}">
     <div class="form-group">
         <input type="text" id="title" class="form-control" th:field="*{title}" placeholder="Title" />
+        <p class="alert" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
     </div>
     <div class="form-group">
         <textarea id="description" th:field="*{body}" class="form-control" placeholder="Description"></textarea>
+        <p class="alert" th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></p>
     </div>
-
     <button type="submit" class="btn btn-info">Submit</button>
     </form>
 

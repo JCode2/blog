@@ -1,6 +1,9 @@
 package com.codeup;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -13,9 +16,12 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotBlank(message = "Post must have a title")
+    @Size(min = 3, message = "A title must be at least 3 characters.")
     @Column(nullable = false)
     private String title;
 
+    @NotBlank(message = "Post must have a description")
     @Column(nullable = false)
     private String body;
 
