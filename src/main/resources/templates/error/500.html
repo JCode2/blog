@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="partials/awesomeHeader :: awesomeHeader">
+    <meta charset="UTF-8" />
+    <title>Error</title>
+</head>
+<body>
+<nav th:replace="partials/awesomeNav :: awesomeNav"></nav>
+
+<th:block th:switch="${error}">
+    <div th:case="'Internal Server Error'">
+        <h1>Server Error</h1>
+    </div>
+    </th:block>
+</body>
+</html>
