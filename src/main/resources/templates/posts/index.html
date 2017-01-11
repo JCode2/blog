@@ -28,7 +28,7 @@
             <h3><a th:href="@{'/posts/' + *{id}}" th:text="*{title}" class="list-group-item toggle"></a></h3>
             <h4 th:text="*{body}"></h4>
 
-            <h4><a th:href="@{'/posts/' + *{id} + '/edit'}">Edit</a></h4>
+            <h4><a th:href="@{'/posts/' + *{id} + '/edit'}"><span class="glyphicon glyphicon-edit-sign"></span>Edit</a></h4>
 
        </div>
 
