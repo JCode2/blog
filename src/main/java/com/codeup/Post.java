@@ -1,5 +1,7 @@
 package com.codeup;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -24,6 +26,19 @@ public class Post {
     @NotBlank(message = "Post must have a description")
     @Column(nullable = false)
     private String body;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.DATE)
+    @Column(name = "create_date")
+    private Date createDate;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.DATE)
+    @Column(name = "update_date")
+    private Date updateDate;
+/*
+    @OneToOne
+    private user owner;*/
 
 
     public void setId(int id) {
@@ -50,8 +65,23 @@ public class Post {
         this.body = body;
     }
 
+    public Date getCreateDate() {
+        return createDate;
+    }
 
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
 }
+
 
     //private User = author;
 

@@ -17,7 +17,7 @@
         <p class="alert" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
     </div>
     <div class="form-group">
-        <textarea id="description" th:field="*{body}" class="form-control" placeholder="Description"></textarea>
+        <textarea id="description" th:field="*{body}" class="form-control" placeholder="Type Here"></textarea>
         <p class="alert" th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></p>
     </div>
     <button type="submit" class="btn btn-info">Submit</button>
@@ -25,6 +25,6 @@
 
 </div>
 
-<footer th:replace="partials/awesomeFoot :: awesomeFoot"></footer>
+<footer class="fixed-to-bottom"  th:replace="partials/awesomeFoot :: awesomeFoot"></footer>
 </body>
 </html>
