@@ -44,4 +44,11 @@ public class HibernatePostDao implements Posts {
         session.update(existingPost);
         tx.commit();
     }
+
+    @Override
+    public void delete(int id) {
+        Transaction tx = session.beginTransaction();
+        session.delete(showPost(id));
+        tx.commit();
+    }
 }

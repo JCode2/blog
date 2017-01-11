@@ -15,7 +15,9 @@ public interface Posts {
 //    Post showEdit(int id);
 
     void update(Post existingPost);
+
+
+    void delete(int id);
+
+
 }
-
-
-

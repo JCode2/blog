@@ -50,16 +50,17 @@ public class PostController {
             existingPost.setBody(newBody);
             DaoFactory.getPostsDao().update(existingPost);
         return "redirect:/posts/" + existingPost.getId();
+
         }
 
-    @PostMapping("/{id}/delete")
+    @GetMapping("/{id}/delete")
     public String delete(@ModelAttribute Post editedPost, @PathVariable int id) {
         Post existingPost = DaoFactory.getPostsDao().showPost(editedPost.getId());
-        String newTitle = editedPost.getTitle();
+      /*  String newTitle = editedPost.getTitle();
         String newBody = editedPost.getBody();
         existingPost.setTitle(newTitle);
-        existingPost.setBody(newBody);
-        DaoFactory.getPostsDao().delete(existingPost);
+        existingPost.setBody(newBody);*/
+        DaoFactory.getPostsDao().delete(id);
         return "redirect:/posts";
     }
         /*

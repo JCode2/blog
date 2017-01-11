@@ -6,9 +6,9 @@
 <body>
     <nav th:include="partials/awesomeNav :: awesomeNav"></nav>
 
-<!--<h1 th:text="*{title}">Edit </h1>-->
+<h1 th:text="*{title}">Edit </h1>
 
-<div id="createform" class="page-login-form box">
+<div id="createform" class="peage-login-form box">
     <form th:action="@{'/posts/' + *{id} + '/edit'}" th:method="POST" role="form" class="login-form" th:object="${post}">
         <div class="form-group">
             <input type="text" id="title" class="form-control" th:field="*{title}" placeholder="Title" />
