@@ -9,19 +9,19 @@
 
     <nav th:replace="partials/awesomeNav :: awesomeNav"></nav>
 
-<h1>Welcome to The Blog</h1>
+<h1 class="page-header">Welcome to The Blog</h1>
 
-<div id="posts" th:each="post:${post}">
+<!--<div id="posts" th:each="post:${post}">
 
     <h3>th:text="${post.title}</h3>
     <p>th:text="${post.body}</p>
 
 
-</div>
+</div>-->
 
 <div class="container">
 
-    <table class="table">
+  <!--  <table class="table">
 
         <tr class="active">
 
@@ -33,21 +33,17 @@
 
             <th></th>
 
-        </tr>
+        </tr>-->
+        <div class="list-group list-group-item" th:each="post : ${posts}" th:object="${post}">
 
-        <tr th:each="post : ${posts}" th:object="${post}">
+            <!--<h4 th:text="*{id}"></h4>-->
 
-            <td th:text="*{id}"></td>
+            <h3><a th:href="@{'/posts/' + *{id}}" th:text="*{title}" class="list-group-item toggle"></a></h3>
+            <h4 th:text="*{body}"></h4>
 
-            <td><a th:href="@{'/posts/' + *{id}}" th:text="*{title}"></a></td>
+            <h4><a th:href="@{'/posts/' + *{id} + '/edit'}">Edit</a></h4>
 
-            <!--<td th:text="*{body}"></td>-->
-
-            <td><a th:href="@{'/posts/' + *{id} + '/edit'}">Edit</a></td>
-
-        </tr>
-
-    </table>
+       </div>
 
 </div>
 

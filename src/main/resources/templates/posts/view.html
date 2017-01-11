@@ -9,13 +9,11 @@
 
 <nav th:replace="partials/awesomeNav :: awesomeNav"></nav>
 
-    <h1>Post</h1>
+    <div th:each="post : ${post}" th:object="${post}" class="list-group list-group-item"  id="individual-post">
+    <h1 th:text="*{title}" class="page-header"></h1>
 
     <div th:each="post : ${post}" th:object="${post}">
-    <h2 th:text="*{title}"></h2>
-
-    <div th:each="post : ${post}" th:object="${post}">
-    <p th:text="*{body}"></p>
+    <h4 th:text="*{body}"></h4>
     </div>
 
     <a th:href="@{'/posts/' + *{id} + '/edit'}" class="btn btn-info" type="submit">Edit</a>

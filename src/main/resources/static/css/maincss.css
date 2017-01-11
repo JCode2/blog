@@ -1,5 +1,5 @@
 body{
-    background-color: ghostwhite;
+    background-color: white;
     font-family:'DejaVu Sans Mono','monospace';
 }
 
@@ -35,4 +35,13 @@ h1{
 
 .view-post{
     padding-left: 45%;
+}
+
+.glyphicon{
+    padding-right: 5px;
+}
+
+#individual-post{
+    padding-left: 20%;
+    padding-right: 20%;
 }
