@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="partials/awesomeHeader :: awesomeHeader">
+    <meta charset="UTF-8" />
     <title th:text="'Ooops, ' + ${error}"></title>
 </head>
 <body>
