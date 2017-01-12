@@ -40,8 +40,10 @@ h1{
 }
 
 #individual-post{
-    padding-left: 20%;
-    padding-right: 20%;
+    display: flex;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 footer{
@@ -55,4 +57,17 @@ footer{
 
 .container{
     padding-bottom: 1%;
+}
+
+.page-header{
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.buttons{
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
 }

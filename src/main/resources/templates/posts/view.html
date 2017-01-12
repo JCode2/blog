@@ -9,16 +9,18 @@
 
 <nav th:replace="partials/awesomeNav :: awesomeNav"></nav>
 
-    <div th:each="post : ${post}" th:object="${post}" class="list-group list-group-item"  id="individual-post">
-    <h1 th:text="*{title}" class="page-header"></h1>
+<h1 th:each="post : ${post}" th:object="${post}" th:text="*{title}" class="page-header"></h1>
 
+    <div th:each="post : ${post}" th:object="${post}" class="container-fluid" id="individual-post">
     <div th:each="post : ${post}" th:object="${post}">
     <h4 th:text="*{body}"></h4>
     </div>
-
-    <a th:href="@{'/posts/' + *{id} + '/edit'}" class="btn btn-info" type="submit"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-        <a th:href="@{'/posts/' + *{id} + '/delete'}" class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove-sign"></span>Delete</a>
     </div>
+
+<div class="buttons">
+<a th:href="@{'/posts/' + *{id} + '/edit'}" class="btn btn-info" type="submit"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+<a th:href="@{'/posts/' + *{id} + '/delete'}" class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove-sign"></span>Delete</a>
+</div>
 <footer th:replace="partials/awesomeFoot :: awesomeFoot"></footer>
 </body>
 </html>
