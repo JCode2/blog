@@ -4,8 +4,6 @@ body{
 }
 
 .navbar{
-    display: flex;
-    justify-content: center space-around;
     padding-top: 2%;
     font-size: 1.2em;
     background-color:steelblue;

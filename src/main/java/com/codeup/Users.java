@@ -1,53 +1,11 @@
 package com.codeup;
 
-import java.util.HashSet;
-import java.util.Set;
+import org.springframework.data.repository.CrudRepository;
 
-public class Users {
-    public Long getId() {
-        return id;
+/**
+ * Created by joshua on 1/12/17.
+ */
+    public interface Users extends CrudRepository<User, Long> {
+        public User findByUsername(String username);
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Set<Posts> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(Set<Posts> posts) {
-        this.posts = posts;
-    }
-
-    private Long id;
-    private String user;
-    private String password;
-    private String name;
-    private Set<Posts> posts = new HashSet<>();
-
-}

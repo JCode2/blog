@@ -16,7 +16,7 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @NotBlank(message = "Post must have a title")
     @Size(min = 3, message = "A title must be at least 3 characters.")
@@ -36,17 +36,18 @@ public class Post {
     @Temporal(TemporalType.DATE)
     @Column(name = "update_date")
     private Date updateDate;
-/*
-    @OneToOne
-    private user owner;*/
 
+    /*@CreationTimestamp
+    @Temporal(TemporalType.DATE)
+    @Column(name = users)
+    private String user;*/
 
-    public void setId(int id) {
-        this.id = id;
+    public long getId() {
+        return id;
     }
 
-    public int getId() {
-        return id;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -80,9 +81,5 @@ public class Post {
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
     }
+
 }
-
-
-    //private User = author;
-
-   // private Date date = new Date();

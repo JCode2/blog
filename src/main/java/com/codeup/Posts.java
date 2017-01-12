@@ -1,23 +1,25 @@
 package com.codeup;
 
 import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
-public interface Posts {
-
-
-    List<Post> all();
-
-    void save(Post post);
-    // Post edit(Post post);
-
-    Post showPost(int id);
-
-//    Post showEdit(int id);
-
-    void update(Post existingPost);
+public interface Posts extends CrudRepository<Post, Long> {
 
 
-    void delete(int id);
+//    List<Post> all();
+//
+//    void save(Post post);
+//    // Post edit(Post post);
+//
+//    Post showPost(int id);
+//
+////    Post showEdit(int id);
+//
+//    void update(Post existingPost);
+//
+//
+//    void delete(int id);
+
 
 
 }
