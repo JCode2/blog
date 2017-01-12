@@ -17,14 +17,6 @@ public class UserController {
     /*@Autowired
     private passwordEncoder passwordEncoder;*/
 
-
-
-    @Autowired
-    @GetMapping("/login")
-    public String showLogin(){
-        return "posts/login";
-    }
-
     @Autowired
     @GetMapping("/register")
     public String showRegister(){
