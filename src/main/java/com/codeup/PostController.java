@@ -73,11 +73,14 @@ public class PostController {
         return "redirect:/posts";
     }
 
-   @GetMapping("/login")
-        public String showLogin(){
-            return "posts/login";
-        }
 
-
+   /*@PostMapping("/register")
+    public String registerComplete(){
+       String username = editedPost.getTitle();
+       String newBody = editedPost.getBody();
+       existingPost.setTitle(newTitle);
+       existingPost.setBody(newBody);
+       return("/posts");
+   }*/
     }
 

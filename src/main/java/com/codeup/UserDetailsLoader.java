@@ -1,3 +1,4 @@
+
 package com.codeup;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 /**
  * Created by joshua on 1/12/17.
  */
+
 @Service("customUserDetailsService")
 public class UserDetailsLoader implements UserDetailsService {
     private final Users users;
@@ -33,3 +36,4 @@ public class UserDetailsLoader implements UserDetailsService {
         return new UserWithRoles(user, userRoles);
     }
 }
+

@@ -2,12 +2,15 @@ body{
     background-color: white;
     font-family:'DejaVu Sans Mono','monospace';
 }
-
-.navbar{
+.nav{
     padding-top: 2%;
     font-size: 1.2em;
     background-color:steelblue;
+    display:flex;
+    justify-content: flex-end space-around;
+
 }
+
 
 nav a{
     color:white;
@@ -48,15 +51,17 @@ h1{
 
 footer{
     padding-top:2%;
-    padding-bottom: 2%;
+    padding-bottom:2%;
     background-color: steelblue;
     color: white;
     font-size: 1.2em;
     text-align: center;
+
 }
 
 .container{
     padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 .page-header{
@@ -66,8 +71,15 @@ footer{
     padding-bottom: 2%;
 }
 
-.buttons{
-    padding-top: 2%;
+#login-form{
     display: flex;
     justify-content: center;
+}
+
+.seperate{
+    padding: 2%;
+}
+
+.buttons{
+    padding: 2%;
 }
