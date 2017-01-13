@@ -83,3 +83,9 @@ footer{
 .buttons{
     padding: 2%;
 }
+
+#yay{
+    display: flex;
+    justify-content: center;
+
+}

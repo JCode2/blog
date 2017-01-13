@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:include="partials/awesomeHeader::awesomeHeader">
     <meta charset="UTF-8" />
     <title>Delete</title>
 </head>
 <body>
+<nav th:replace="partials/awesomeNav :: awesomeNav"></nav>
 
-<h1>Are you sure you want to delete?</h1>
+<h1>Successfully Delete!</h1>
 
-<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button>
+<!--<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span>Delete</button>-->
+<div id="yay">
+<img src="/static/css/yay.jpeg" />
+</div>
 
 </body>
 </html>

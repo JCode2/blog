@@ -70,17 +70,7 @@ public class PostController {
     public String delete(@ModelAttribute Post editedPost, @PathVariable long id) {
         Post existingPost = posts.findOne(editedPost.getId());
         posts.delete(id);
-        return "redirect:/posts";
+        return "posts/delete";
     }
-
-
-   /*@PostMapping("/register")
-    public String registerComplete(){
-       String username = editedPost.getTitle();
-       String newBody = editedPost.getBody();
-       existingPost.setTitle(newTitle);
-       existingPost.setBody(newBody);
-       return("/posts");
-   }*/
     }
 
